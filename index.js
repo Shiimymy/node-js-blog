@@ -6,7 +6,19 @@ const app = new express();
 app.use(express.static("public")); // get the static in public dir
 
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "pages/index.html")); // create html home page
+  res.sendFile(path.resolve(__dirname, "pages/index.html")); // create html home page path
+});
+
+app.get("/about", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "pages/about.html"));
+});
+
+app.get("/post", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "pages/post.html"));
+});
+
+app.get("/contact", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "pages/contact.html"));
 });
 
 app.listen(4000, () => {
