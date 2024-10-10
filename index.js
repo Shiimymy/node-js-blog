@@ -2,7 +2,11 @@ const express = require("express");
 const path = require("path");
 const expressEdge = require("express-edge");
 
+const mongoose = require("mongoose"); // npm i --save mongoose
+
 const app = new express();
+
+mongoose.connect("mongodb://localhost/node-js-blog");
 
 app.use(express.static("public")); // get the static in public dir
 
